@@ -10,6 +10,7 @@ from PIL import ImageTk, Image
 load_dotenv()
 
 accesstoken = os.environ["accesstoken"]
+#clientid= os.environ['clientid']
 
 # The Image Choice Button
 
@@ -90,18 +91,19 @@ def main_app():
         print(result)
         print(result["data"]["link"])
         return result["data"]["link"]
-    def get_image(image_id):
-        url = f"https://api.imgur.com/3/image/{image_id}"
 
-        payload={}
-        headers = {
-          'Authorization': f'Client-ID {clientid}'
-        }
+    # A Code For Getting The Image Details Provided You Have its Id From Imgur
 
-        response = requests.request("GET", url, headers=headers, data=payload)
-        result = response.json()
-        print(result)
-    #get_image('')
-    #upload_image("test-image.png", "test-image.png")
+#    def get_image(image_id):
+#        url = f"https://api.imgur.com/3/image/{image_id}"
+#
+#        payload={}
+#        headers = {
+#          'Authorization': f'Client-ID {clientid}'
+#        }
+#
+#        response = requests.request("GET", url, headers=headers, data=payload)
+#        result = response.json()
+#        print(result)
     root.mainloop()
 main_app()
