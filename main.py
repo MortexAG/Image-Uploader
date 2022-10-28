@@ -4,7 +4,7 @@ import PIL
 import dotenv
 from dotenv import load_dotenv
 import tkinter as tk
-from tkinter import NW, Button, Canvas, Frame, Label, Listbox, PhotoImage, Tk, Toplevel, messagebox, ttk
+from tkinter import Label, Listbox, Toplevel, messagebox, ttk
 from tkinter import filedialog as fd
 from PIL import ImageTk, Image
 load_dotenv()
