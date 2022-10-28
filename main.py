@@ -9,8 +9,6 @@ from tkinter import filedialog as fd
 from PIL import ImageTk, Image
 load_dotenv()
 
-clientid = os.environ["clientid"]
-clientsecret = os.environ["clientsecret"]
 accesstoken = os.environ["accesstoken"]
 
 # The Image Choice Button
