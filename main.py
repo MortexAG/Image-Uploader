@@ -83,7 +83,7 @@ def main_app():
         ('image',('file',open(f'{imagepath}','rb'),'application/octet-stream'))
         ]
         headers = {
-          'Authorization': f'Bearer {accesstoken}'
+          'Authorization': f'Client-ID {accesstoken}'
         }
 
         response = requests.request("POST", url, headers=headers, data=payload, files=files)
