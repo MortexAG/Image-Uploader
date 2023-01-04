@@ -3,13 +3,18 @@ import os
 import PIL
 import dotenv
 from dotenv import load_dotenv
-import tkinter as tk
-from tkinter import Label, Listbox, Toplevel, messagebox, ttk
-from tkinter import filedialog as fd
+import customtkinter as tk
+from customtkinter import CTkLabel as Label, CTkInputDialog as Listbox, CTkToplevel as Toplevel, CTkTextbox as messagebox, CTkButton
+from customtkinter import filedialog as fd
+#import tkinter as tk
+#from tkinter import Label, Listbox, Toplevel, messagebox, ttk
+#from tkinter import filedialog as fd
 from PIL import ImageTk, Image
 load_dotenv()
 
 accesstoken = os.environ["accesstoken"]
+tk.set_appearance_mode("dark")
+tk.set_default_color_theme("dark-blue")
 #clientid= os.environ['clientid']
 
 # The Image Choice Button
@@ -17,7 +22,7 @@ accesstoken = os.environ["accesstoken"]
 
 def main_app():
     # Main App Frame
-    root =tk.Tk()
+    root =tk.CTk()
     root.title("Image Uploader")
     root.geometry("500x500")
     root.resizable(True, True)
@@ -30,7 +35,7 @@ def main_app():
         messagebox.showinfo(title="Upload Successful", message="The Image Link is\n"+image_link)
         return image_link
     def upload_button():
-        upload_button = ttk.Button(
+        upload_button = CTkButton(
         root,
         text='Upload The Image',
         command=start_upload
@@ -67,7 +72,7 @@ def main_app():
         
 
     # open button
-    open_button = ttk.Button(
+    open_button = CTkButton(
         root,
         text='Open a File',
         command=select_file
